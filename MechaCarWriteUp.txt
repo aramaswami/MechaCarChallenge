@@ -1,0 +1,55 @@
+
+Part_1: MechaCar MPG analysis
+I created a script to compute a multivariable regression model for the MechaCar_mpg data (which was provided as a csv file). Based on my analysis, I found that the two significant indpendent variables in the multiple linear regression analysis are:
+Vehicle length
+Ground clearance
+
+The above-mentioned variables are statistically not likely to provide random amounts of variance to the model. We note that, in addition, the intercept is also significant. This indicates that there are variables not included in the data that could explain the variation and improve the prectiviness of the regression anaysis.
+
+Part_2: Suspension_coil analysis
+I created summary statics for suspension_coil data that was provided as a csv file. The summary table calculates the mean, median, variance, and std deviation for the data.
+
+A key data point to determine if the suspension coil data meets the required threshhold is for the variance to be <100. My analysis shows that the variance calculated for the population data is 62.29, which meets the required threshhold.
+
+The calculated variance seems high despite meeting the threshhold. I was expecting a tighter tolerance for this critical metric so I analyzed the data by manufacturing_lot.
+
+Part_3: Hypothesis test for population mean 
+I conducted two t-tests to determine whether the sample mean is representative of the population mean for suspension coil data.
+
+For the first test, I generated a sample of 50  datapoints from the population data. The results of the one sample t-test are provided below. As the results show, the p-value is 0.4927, which is significantly higher than our threshhold of 0.05. Accordingly, I conclude that the null hypothesis is valid.
+
+data: sample_psi$PSI
+t = 0.69119, df = 49, p-value = 0.4927
+alternative hypothesis: true mean is not equal to 1498.78
+95 percent confidence interval:
+ 1497.826 1500.734
+sample estimates:
+mean of x 
+  1499.28 
+
+
+For the second test, I generated another sample of 50 datapoints from the population data. The results of the two sample t-test are provided below. As the results show, the p-value is 0.2469, which is also significantly higher than our threshhold of 0.05. Accordingly, I conclude that the null hypothesis is valid.
+
+Welch Two Sample t-test
+
+data:  sample_psi$PSI and sample2_psi$PSI
+t = -1.1655, df = 90.159, p-value = 0.2469
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -3.840359  1.000359
+sample estimates:
+mean of x mean of y 
+  1499.28   1500.70 
+
+
+Part_4: Study Design
+I suggest a new study to compare MechaCar with competitors.
+
+Metrics:
+The following metrics would be of interest for comparison: price, fuel efficiency, service duration and coverage, included features, available colors and options, financing, discounts, and delivery schedule.
+
+Hypothesis:
+The hypothesis to test would be which factors impact consumer selection the most. The null hypothesis would be that some factors are statisticaly significant and others are not, based on a multi variable regression analysis and related t-tests.
+
+Data collection:
+The data collection should be based on the significant variables. I expect these would depend on the price class. Buyers of more expensive cars are likely to value features that are not the same as those that buyers of value cars might look for.
